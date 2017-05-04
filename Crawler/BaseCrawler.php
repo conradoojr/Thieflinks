@@ -1,7 +1,7 @@
 <?php
-namespace ThiefLinks\Conradoojr\Crawler;
+namespace Conradoojr\ThiefLinks\Crawler;
 
-use ThiefLinks\Url;
+use Conradoojr\ThiefLinks\Url;
 
 abstract class BaseCrawler implements ICrawler
 {

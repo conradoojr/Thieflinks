@@ -1,5 +1,5 @@
 <?php
-namespace ThiefLinks\Conradoojr\\Crawler;
+namespace Conradoojr\ThiefLinks\Crawler;
 
 interface ICrawler {
     public function getAllLinks();
