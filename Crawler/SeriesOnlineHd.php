@@ -1,5 +1,5 @@
 <?php
-namespace ThiefLinks\Crawler;
+namespace ThiefLinks\Conradoojr\\Crawler;
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler as DomCrawler;
 use RuntimeException;

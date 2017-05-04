@@ -1,6 +1,6 @@
 <?php
 
-namespace ThiefLinks;
+namespace Conradoojr\ThiefLinks;
 
 /**
  * class SimpleFactory.

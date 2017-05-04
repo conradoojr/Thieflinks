@@ -1,5 +1,5 @@
 <?php
-namespace ThiefLinks;
+namespace Conradoojr\ThiefLinks;
 
 class Url {
     public $scheme;

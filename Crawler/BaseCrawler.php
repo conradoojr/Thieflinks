@@ -1,5 +1,5 @@
 <?php
-namespace ThiefLinks\Crawler;
+namespace ThiefLinks\Conradoojr\Crawler;
 
 use ThiefLinks\Url;
 

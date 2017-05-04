@@ -15,5 +15,8 @@
             "email": "conradoojr@outlook.com"
         }
     ],
+    "autoload": {
+        "psr-4": { "Conradoojr\\ThiefLinks\\": "" },
+    },
     "minimum-stability": "dev"
 }
