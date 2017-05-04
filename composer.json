@@ -1,0 +1,19 @@
+{
+    "name": "conradoojr/thief-links",
+    "description": "Crawler For WebSites of Series",
+    "type": "project",
+    "require": {
+        "symfony/css-selector": "2.8.*|3.0.*",
+        "symfony/dom-crawler": "2.8.*|3.0.*",
+        "guzzlehttp/guzzle": "^6.2",
+        "php": ">=5.5.9"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Conrado Junior",
+            "email": "conradoojr@outlook.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
