@@ -2,6 +2,7 @@
 
 namespace Conradoojr\ThiefLinks;
 
+use Conradoojr\ThiefLinks\Url;
 /**
  * class SimpleFactory.
  */
@@ -12,26 +13,35 @@ class Factory
      */
     protected $availableSiteList;
     protected $url;
-    /**
-     * You can imagine to inject your own type list or merge with
-     * the default ones...
-     */
-    public function __construct($url)
+
+    public function __construct()
     {
         $this->availableSiteList =[
-            'www.seriesonlinehd.org' => __NAMESPACE__.'\Crawler\SeriesOnlineHd',
+            'http://www.seriesonlinehd.org' => __NAMESPACE__.'\Crawler\SeriesOnlineHd',
         ];
-
-        $this->url = new Url();
-        $this->url->fill($url);
     }
 
-    public function createCrawler()
+    public function search($term)
     {
-        if (!array_key_exists($this->url->host, $this->availableSiteList)) {
-            throw new \InvalidArgumentException("$this->url->host is not available");
+        $result = [];
+        foreach ($this->availableSiteList as $key => $site) {
+            $availableClass = $this->availableSiteList[$key];
+            $availableObject = new $availableClass($key);
+            $lowerAvailableClassName = strtolower($availableObject->getClassName());
+            $result[$lowerAvailableClassName] =$availableObject->search($term);
         }
-        $className = $this->availableSiteList[$this->url->host];
+        return $result;
+    }
+
+    public function createCrawler($url)
+    {
+        $this->url = new Url();
+        $this->url->fill($url);
+
+        if (!array_key_exists($this->url->domain, $this->availableSiteList)) {
+            throw new \InvalidArgumentException($this->url->domain .  ' is not available');
+        }
+        $className = $this->availableSiteList[$this->url->domain];
 
         return new $className($this->url->full);
     }

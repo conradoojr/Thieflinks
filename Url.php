@@ -11,6 +11,7 @@ class Url {
     public $query;
     public $fragment;
     public $full;
+    public $domain;
 
     public function parse($url)
     {
@@ -24,10 +25,7 @@ class Url {
         foreach ($urlParsed as $key => $value) {
             $this->{$key} = $value;
         }
-    }
 
-    public function domain()
-    {
-        return $this->scheme . '://' . $this->host;
+        $this->domain = $this->scheme . '://' . $this->host;
     }
 }
